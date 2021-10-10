@@ -1,7 +1,7 @@
 
 export default function CollectionSection() {
     return (
-        <section className="text-white body-font bg-gray-800" id="collection">
+        <section className="text-white body-font bg-gray-700" id="collection">
             <div className="container px-5 py-24 mx-auto">
                 <div className="text-center mb-20">
                     <h1 className="sm:text-3xl text-2xl font-medium title-font text-white mb-4">Collection</h1>

@@ -2,7 +2,7 @@ import {useWeb3React} from "@web3-react/core";
 import {useEffect, useState} from "react";
 import {rinkeby_contract_address, mainnet_contract_address} from "../utils/const";
 
-export function useAddress() {
+export default function useAddress() {
     const {chainId} = useWeb3React();
 
     const [address, setAddress] = useState(rinkeby_contract_address);
