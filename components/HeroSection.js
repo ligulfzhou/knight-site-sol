@@ -16,8 +16,12 @@ export default function HeroSection() {
                         {/* Stay Tuned. */}
                     </p>
                     <div className="flex justify-center">
-                        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-                        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Button</button>
+                        <a href="https://twitter.com/Pixel__Knights" target="_blank" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
+                            <img src="/twitter.svg" className=""/>
+                        </a>
+                        <a href="https://discord.gg/kvyMYEWXes" target="_blank" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                            <img src="/discord.svg" className=""/>
+                        </a>
                     </div>
                 </div>
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

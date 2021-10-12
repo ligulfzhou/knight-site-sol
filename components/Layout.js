@@ -32,7 +32,7 @@ function Head() {
                 property="og:description"
                 content="Pixel Knights are 10000 randomly generated knights and living on Ethereum mainnet."
             />
-            <meta property="og:image" content="https://www.pixelknights.art/meta.png" />
+            <meta property="og:image" content="https://f002.backblazeb2.com/file/pixelknights/knights.jpeg" />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
@@ -42,7 +42,7 @@ function Head() {
                 property="twitter:description"
                 content="Pixel Knights are 10000 randomly generated knights and living on Ethereum mainnet."
             />
-            <meta property="twitter:image" content="https://mnemonic.codes/meta.png" />
+            <meta property="twitter:image" content="https://f002.backblazeb2.com/file/pixelknights/knights.jpeg" />
         </HTMLHead>
     );
 }
@@ -69,6 +69,7 @@ function Header() {
                 </a>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <a className="mr-5 hover:text-blue-600" href="#collection">Collection</a>
+                    <a className="mr-5 hover:text-blue-600" href="#mint">Mint</a>
                     <a className="mr-5 hover:text-blue-600" href="#milestone">Milestone</a>
                     <a className="mr-5 hover:text-blue-600" href="#faq">FAQ</a>
                 </nav>
@@ -93,11 +94,17 @@ function Footer() {
                     <span className="ml-3 text-xl text-white">Pixel Knights</span>
                 </a>
                 <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                   <a className="ml-3 ">
+                <a href="https://twitter.com/Pixel__Knights" target="_blank" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
+                            <img src="/twitter.svg" className="w-5 h-5" />
+                        </a>
+                        <a href="https://discord.gg/kvyMYEWXes" target="_blank" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                            <img src="/discord.svg" className="w-5 h-5" />
+                        </a>
+                   {/* <a className="ml-3 ">
                         <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                             <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
                         </svg>
-                    </a>
+                    </a> */}
                     {/* <a className="ml-3">
                         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
                             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>

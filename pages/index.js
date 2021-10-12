@@ -122,7 +122,7 @@ export default function Home() {
   return (
     <Layout>
       <HeroSection />
-      <section className="text-white body-font bg-gray-800">
+      <section className="text-white body-font bg-gray-800" id="mint">
         <div className="container px-5 py-16 mx-auto">
           <div className="text-center mb-20">
             <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Mint Your Pixel Knights</h1>
