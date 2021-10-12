@@ -35,12 +35,12 @@ export default function CollectionSection() {
                     <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                         <h2 className="text-white text-lg title-font font-medium mb-2">Human (人类)</h2>
                         <p>
-                            <div class="badge badge-lg">Mounts: Horse</div>
-                            <div class="badge badge-lg">Weapon: Polorarm</div>
-                            <div class="badge badge-lg">Hat: Metal</div>
+                            <div className="badge badge-lg">Mounts: Horse</div>
+                            <div className="badge badge-lg">Weapon: Polearm</div>
+                            <div className="badge badge-lg">Hat: Metal</div>
                         </p>
                         <p className="mt-4">
-                            There are 8,000 human pixel knights. They ride on horses, ware metal hats, use their polorarm to expand their territory.
+                            There are 8,000 human pixel knights. They ride on horses, ware metal hats, use their polearms to expand their territory.
                         </p>
 
                     </div>
@@ -49,9 +49,9 @@ export default function CollectionSection() {
                     <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                         <h2 className="text-white text-lg title-font font-medium mb-2">elf (精灵)</h2>
                         <p>
-                            <div class="badge badge-lg">Mounts: Elk</div>
-                            <div class="badge badge-lg">Weapon: Wand</div>
-                            <div class="badge badge-lg">Hat: Cloth</div>
+                            <div className="badge badge-lg">Mounts: Elk</div>
+                            <div className="badge badge-lg">Weapon: Wand</div>
+                            <div className="badge badge-lg">Hat: Cloth</div>
                         </p>
                         <p className="mt-4">
                             There are 1,000 elf. They ride on elk, ware cloth hats, use their wands to resist invasion.
@@ -68,9 +68,9 @@ export default function CollectionSection() {
                     <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
                         <h2 className="text-white text-lg title-font font-medium mb-2">Orc (兽人)</h2>
                         <p>
-                            <div class="badge badge-lg">Mounts: Wild boar</div>
-                            <div class="badge badge-lg">Weapon: Axe</div>
-                            <div class="badge badge-lg">Hat: Leather</div>
+                            <div className="badge badge-lg">Mounts: Wild boar</div>
+                            <div className="badge badge-lg">Weapon: Axe</div>
+                            <div className="badge badge-lg">Hat: Leather</div>
                         </p>
                         <p className="mt-4">
                             There are 1,000 orc pixel knights. They ride on wild boars, ware leather hats, use their axes to fight for freedom.

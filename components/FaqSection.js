@@ -12,7 +12,7 @@ export default function FaqSection() {
                 </div>
             </div>
             <div className="container px-5 pb-2 mx-auto flex flex-wrap">
-                <div tabindex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
+                <div tabIndex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
                     <div className="collapse-title text-xl font-medium">
                         What are the Pixel Knights?
                     </div>
@@ -22,7 +22,7 @@ export default function FaqSection() {
                 </div>
             </div>
             <div className="container px-5 pb-2 mx-auto flex flex-wrap">
-                <div tabindex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
+                <div tabIndex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
                     <div className="collapse-title text-xl font-medium">
                         When are Pixel Knights launching ?
                     </div>
@@ -32,7 +32,7 @@ export default function FaqSection() {
                 </div>
             </div>
             <div className="container px-5 pb-2 mx-auto flex flex-wrap">
-                <div tabindex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
+                <div tabIndex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
                     <div className="collapse-title text-xl font-medium">
                         How much does each Pixel Knight cost?
                     </div>
@@ -42,7 +42,7 @@ export default function FaqSection() {
                 </div>
             </div>
             <div className="container w-full px-5 pb-2 mx-auto flex flex-wrap">
-                <div tabindex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
+                <div tabIndex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
                     <div className="collapse-title text-xl font-medium">
                         How to participate in premint?
                     </div>
@@ -52,7 +52,7 @@ export default function FaqSection() {
                 </div>
             </div>
             <div className="container px-5 w-full pb-20 mx-auto flex flex-wrap">
-                <div tabindex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
+                <div tabIndex="0" className="w-full collapse border rounded-box border-base-300 collapse-plus">
                     <div className="collapse-title text-xl font-medium">
                         when do the Pixel Knights reveal after mint?
                     </div>
