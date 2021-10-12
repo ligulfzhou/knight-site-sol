@@ -125,19 +125,20 @@ export default function Home() {
       <section className="text-white body-font bg-gray-800">
         <div className="container px-5 py-16 mx-auto">
           <div className="text-center mb-20">
-            <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Mint Your Pixel Knight</h1>
+            <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Mint Your Pixel Knights</h1>
             {!active && (<ConnectButton />)}
           </div>
-          <div className="flex items-center w-full px-4 py-10 bg-cover card bg-base-200" style={{ backgroundImage: `url(https://picsum.photos/id/314/1000/300)` }}>
+          <div className="flex items-center w-full px-4 py-10 bg-cover card bg-base-200" style={{ backgroundImage: `url(https://f002.backblazeb2.com/file/pixelknights/banner_450.png)` }}>
             <div className="card glass lg:card-side text-neutral-content">
               <figure className="p-6">
-                <img src="https://picsum.photos/id/1005/300/200" className="rounded-lg shadow-lg" />
+                <img src="https://f002.backblazeb2.com/file/pixelknights/mint_knights.png" className="rounded-lg shadow-lg" />
               </figure>
               <div className="max-w-md card-body">
-                <h2 className="card-title">Status: {status}</h2>
-                <p>Rerum reiciendis beatae tenetur excepturi aut pariatur est eos. Sit sit necessitatibus veritatis sed molestiae voluptates incidunt iure sapiente.</p>
+                <h2 className="card-title">Status: <p className='inline-block text-red-600'>{status}</p></h2>
+                <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p>
+                <p className="">20 nfts are allowed to be minted at once.</p>
                 <div className="card-actions">
-                  <select class="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
+                  <select className="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
                     <option disabled="disabled" selected="selected" >mint count: </option>
                     <option>1</option>
                     <option>2</option>
@@ -160,7 +161,7 @@ export default function Home() {
                     <option>19</option>
                     <option>20</option>
                   </select>
-                  <button className="btn glass rounded-full" onClick={mint}>Get Started</button>
+                  <button className="btn rounded-full btn-info" onClick={mint}>Mint</button>
                 </div>
               </div>
             </div>

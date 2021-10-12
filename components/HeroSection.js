@@ -9,9 +9,11 @@ export default function HeroSection() {
                     </h1>
                     <p className="mb-8 leading-relaxed">
                         Pixel Knights is a collection of 10,000 randomly generated Pixel Knight NFTs on the Ethereum blockchain.
-                        A collection of unique, cool and diverse knights, ready to leave a mark in the NFT space!
-                        They are brave, fearless and strong, and ready to fight for their territory.
-                        Stay Tuned.
+                        {/* A collection of unique, cool and diverse knights, ready to leave a mark in the NFT space! */}
+                        There are 8,000 human, 1,000 elf and 1,000 orc.
+                        They are brave, ambitious and strong, and ready to fight for their territory.
+
+                        {/* Stay Tuned. */}
                     </p>
                     <div className="flex justify-center">
                         <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
@@ -19,7 +21,7 @@ export default function HeroSection() {
                     </div>
                 </div>
                 <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-                    <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+                    <img className="object-cover object-center rounded" alt="hero" src="https://f002.backblazeb2.com/file/pixelknights/knights.jpeg" />
                 </div>
             </div>
         </section>
