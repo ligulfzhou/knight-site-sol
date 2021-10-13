@@ -16,7 +16,7 @@ export default function HeroSection() {
                         {/* Stay Tuned. */}
                     </p>
                     <p className="pb-4 text-indigo-500">
-                        Pixel Knights will drop at 31th Oct, 0:00 AM UTC, 
+                        Pixel Knights will drop at 7th Nov, 0:00 UTC, 
                         <br className="hidden lg:inline-block" />Stay Tuned.
                     </p>
                     <div className="flex justify-center">

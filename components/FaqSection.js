@@ -27,7 +27,7 @@ export default function FaqSection() {
                         When are Pixel Knights launching ?
                     </div>
                     <div className="collapse-content">
-                        <p>The project is launching in <span className="badge badge-outline">31th Oct 0 AM UTC</span>(<span className="badge badge-outline">30th Oct 17 PM in California, USA</span>, and <span className="badge badge-outline">31th Oct 8 AM in Shanghai, China</span>), stay tuned.</p>
+                        <p>The project is launching in <span className="badge badge-outline">7th Nov 0:00 UTC</span>(<span className="badge badge-outline">6th Nov 19:00 in California, USA</span>, and <span className="badge badge-outline">7th Nov 8:00 in Shanghai, China</span>), stay tuned.</p>
                     </div>
                 </div>
             </div>
