@@ -47,7 +47,7 @@ export default function CollectionSection() {
                 </div>
                 <div className="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
                     <div className="flex-grow sm:text-left text-center mt-6 sm:mt-0">
-                        <h2 className="text-white text-lg title-font font-medium mb-2">elf (精灵)</h2>
+                        <h2 className="text-white text-lg title-font font-medium mb-2">Elf (精灵)</h2>
                         <p>
                             <div className="badge badge-lg">Mounts: Elk</div>
                             <div className="badge badge-lg">Weapon: Wand</div>

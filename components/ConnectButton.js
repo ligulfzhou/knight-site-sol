@@ -3,9 +3,12 @@ import { useEffect, useState, Fragment } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { injected } from "../utils/connector";
 import { Dialog, Transition } from '@headlessui/react'
+// import { useEagerConnect } from "../hooks/useEagerConnectV2";
 
 
 export default function ConnectButton() {
+
+    // const [tried, isWrong] = useEagerConnect();
     const { active, account, activate, chainId } = useWeb3React();
     const [failed, setFailed] = useState(false);
 
@@ -18,7 +21,7 @@ export default function ConnectButton() {
 
     const connect = () => {
         activate(injected, undefined, true).catch((error) => {
-            if (error.name.includes('UnsupportedChainIdError')) {
+            if (error.name.includes('UnsupportedChainIdError') || error.message.includes('Unsupported')) {
                 setFailed(true)
             }
             console.log('activate...onCatch')
@@ -35,10 +38,8 @@ export default function ConnectButton() {
         injected.isAuthorized().then(isAuthorized => {
             if (isAuthorized) {
                 activate(injected, undefined, true).catch((error) => {
-                    if (error.name.includes('UnsupportedChainIdError')) {
+                    if (error.name.includes('UnsupportedChainIdError') || error.message.includes('Unsupported')) {
                         setFailed(true)
-                        // setErrorMsg("Please Switch to Mainnet")
-                        // openErrorModal()
                     }
                     console.log(error)
                     console.log('activate...onCatch')
