@@ -15,9 +15,10 @@ export default function HeroSection() {
 
                         {/* Stay Tuned. */}
                     </p>
-                    <p className="pb-4 text-indigo-500">
-                        Pixel Knights will drop at 7th Nov, 0:00 UTC, 
-                        <br className="hidden lg:inline-block" />Stay Tuned.
+                    <p className="pb-4 text-indigo-500">Join our discord and follow our twitter to get latest announcements. And Stay Tuned.
+                        {/* Pixel Knights will drop at N/A */}
+                        {/* 7th Nov, 0:00 UTC,  */}
+                        {/* <br className="hidden lg:inline-block" />Join our discord and follow our twitter to get latest announcements. And Stay Tuned. */}
                     </p>
                     <div className="flex justify-center">
                         <a href="https://twitter.com/Pixel__Knights" target="_blank" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">

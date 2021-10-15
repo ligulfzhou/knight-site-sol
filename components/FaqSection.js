@@ -27,7 +27,8 @@ export default function FaqSection() {
                         When are Pixel Knights launching ?
                     </div>
                     <div className="collapse-content">
-                        <p>The project is launching in <span className="badge badge-outline">7th Nov 0:00 UTC</span>(<span className="badge badge-outline">6th Nov 19:00 in California, USA</span>, and <span className="badge badge-outline">7th Nov 8:00 in Shanghai, China</span>), stay tuned.</p>
+                        <p> It should be on Nov. Join our <a href="https://discord.gg/kvyMYEWXes" target="_blank" className="text-red-600"> discord</a> and follow our <a href="https://twitter.com/Pixel__Knights" target="_blank" className="text-red-600"> twitter </a> to get latest announcements</p>
+                        {/* <p>The project is launching in <span className="badge badge-outline">7th Nov 0:00 UTC</span>(<span className="badge badge-outline">6th Nov 19:00 in California, USA</span>, and <span className="badge badge-outline">7th Nov 8:00 in Shanghai, China</span>), stay tuned.</p> */}
                     </div>
                 </div>
             </div>
@@ -37,7 +38,7 @@ export default function FaqSection() {
                         How much does each Pixel Knight cost?
                     </div>
                     <div className="collapse-content">
-                        <p>Each Pixel Knight will cost 0.0333 ETH</p>
+                        <p>Each Pixel Knight will cost 0.05 ETH</p>
                     </div>
                 </div>
             </div>
@@ -47,7 +48,8 @@ export default function FaqSection() {
                         How to participate in premint?
                     </div>
                     <div className="collapse-content">
-                        <p>We do not have any private sale, premint or etc.</p>
+                        <p> Join our <a href="https://discord.gg/kvyMYEWXes" target="_blank" className="text-red-600"> discord</a> and follow our <a href="https://twitter.com/Pixel__Knights" target="_blank" className="text-red-600"> twitter </a> to get latest announcements</p>
+                        {/* <p>We do not have any private sale, premint or etc.</p> */}
                     </div>
                 </div>
             </div>
