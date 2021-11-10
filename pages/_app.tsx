@@ -1,5 +1,7 @@
 // import "../styles/globals.css";
 import 'tailwindcss/tailwind.css'
+import { ToastProvider } from 'react-toast-notifications';
+
 
 import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
@@ -18,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WalletConnectionProvider>
       <WalletBalanceProvider>
-        <Component {...pageProps} />
+        <ToastProvider>
+          <Component {...pageProps} />
+        </ToastProvider>
       </WalletBalanceProvider>
     </WalletConnectionProvider>
   );

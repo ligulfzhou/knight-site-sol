@@ -2,6 +2,9 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import ReactLoading from "react-loading";
+// import toast from "react-hot-toast";
+import { useToasts } from 'react-toast-notifications'
+
 
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import useCandyMachine from "../hooks/useCandyMachine";
@@ -37,6 +40,9 @@ export default function Home() {
   const [privateSeconds, setPrivateSeconds] = useState(0);
   const [publicSeconds, setPublicSeconds] = useState(0);
   const [inWL, setInWL] = useState(false);
+
+  const { addToast } = useToasts()
+
 
   useEffect(() => {
     if (new Date(mintStartDate).getTime() < Date.now()) {
@@ -77,35 +83,53 @@ export default function Home() {
 
   const mint = () => {
     if (!connected) {
-      alert('plz connect your wallet first..')
+      addToast("plz connect your wallet first...", {
+        appearance: 'error',
+        autoDismiss: true,
+      })
       return
     }
 
     if (!isMintLive) {
-      alert('both premint and public mint are not started...')
+      addToast("both premint and public mint are not started...", {
+        appearance: 'error',
+        autoDismiss: true,
+      })
       return
     }
 
     if (isLoading as boolean) {
-      alert("checking if you have already minted 2 nfts,\nIt may take up to 20 seconds.\nBe patient..")
+      addToast("checking if you have already minted 2 nfts,\nIt may take up to 20 seconds.\nBe patient...", {
+        appearance: 'error',
+        autoDismiss: true,
+      })
       console.log(isLoading)
       return
     }
 
     if (nftCount >= 2) {
-      alert('you have already minted ' + nftCount + " nfts.")
+      addToast('you have already minted ' + nftCount + " nfts.", {
+        appearance: 'error',
+        autoDismiss: true,
+      })
       return
     }
 
     if (privateStarted && !publicStarted && !inWL) {
-      alert('you are not in whitelist, can not mint in premint.')
+      addToast('you are not in whitelist, can not mint in premint', {
+        appearance: 'error',
+        autoDismiss: true,
+      })
       return
     } else if (privateStarted && !publicStarted && inWL) {
       startMintMultiple(2)
     } else if (publicStarted) {
       startMintMultiple(2)
     } else {
-      console.log('......')
+      addToast("contact project master...but you will never see this...", {
+        appearance: 'error',
+        autoDismiss: true,
+      })
     }
   }
 
@@ -148,9 +172,9 @@ export default function Home() {
                   </>
                 )}
                 <div className="card-actions">
-                  {isMintLive && (
+                  {/* {isMintLive && ( TODO  */} 
                     <button className="btn rounded-full btn-info" onClick={mint}>Mint 2</button>
-                  )}
+                  {/* )} */}
                 </div>
               </div>
             </div>
@@ -161,7 +185,7 @@ export default function Home() {
       {/* <MilestoneSection /> */}
       <FaqSection />
 
-      <div className="flex flex-col items-center min-h-screen mx-6">
+      {/* <div className="flex flex-col items-center min-h-screen mx-6">
         <Toaster />
         <div className="flex items-center justify-between w-full mt-3">
           <h1 className="text-2xl font-bold">next-candy-machine</h1>
@@ -213,7 +237,7 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col w-1/2">
                         <h1 className="mb-10 text-3xl font-bold">Mint Many</h1>
-                        {/* <MintMany /> */}
+                        <MintMany /> 
                       </div>
                     </>
                   )}
@@ -230,15 +254,15 @@ export default function Home() {
             <p>connect wallet to mint</p>
           )}
         </div>
-        {/* <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full">
           <h2 className="text-2xl font-bold">My NFTs</h2>
           <div className="flex mt-3 gap-x-2">
             {(nfts as any).map((nft: any, i: number) => {
               return <AnNFT key={i} nft={nft} />;
             })}
           </div>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </Layout>
   );
 }
