@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
 
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import useCandyMachine from "../hooks/useCandyMachine";
@@ -10,6 +11,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { Toaster } from "react-hot-toast";
 import Countdown from "react-countdown";
 import useWalletNfts from "../hooks/useWalletNFTs";
+import useWalletNftCount from "../hooks/useWalletNFTCount";
 import AnNFT from "../components/AnNFT/AnNFT";
 import Layout from "../components/Layout";
 import HeroSection from "../components/HeroSection";
@@ -27,12 +29,9 @@ export default function Home() {
     startMintMultiple,
     nftsData,
   } = useCandyMachine();
-
-  // const wallet = useWallet();
-  const [isLoading, nfts] = useWalletNfts();
+  const [isLoading, nftCount] = useWalletNftCount();
   const { connected, publicKey } = useWallet();
   const [isMintLive, setIsMintLive] = useState(false);
-  // const [count, setCount] = useState(1)
   const [privateStarted, setPrivateStarted] = useState(false);
   const [publicStarted, setPublicStarted] = useState(false);
   const [privateSeconds, setPrivateSeconds] = useState(0);
@@ -41,10 +40,6 @@ export default function Home() {
 
   useEffect(() => {
     if (new Date(mintStartDate).getTime() < Date.now()) {
-      console.log(new Date(mintStartDate).getTime())
-      console.log(new Date(mintStartDate).getTime())
-      console.log(new Date(mintStartDate).getTime())
-      console.log(new Date(mintStartDate).getTime())
       setIsMintLive(true);
     }
   }, []);
@@ -80,21 +75,16 @@ export default function Home() {
     })();
   }, [connected])
 
-  // const onCountChange =  (event: any) => {
-  //   console.log(event.target.value)
-  //   setCount(event.target.value)
-  // }
-
   const mint = () => {
     if (!connected) {
       alert('plz connect your wallet first..')
       return
     }
 
-    // if (!privateStarted && !publicStarted) {
-    //   alert('both premint and public mint are not started...')
-    //   return
-    // }
+    if (!isMintLive) {
+      alert('both premint and public mint are not started...')
+      return
+    }
 
     if (isLoading as boolean) {
       alert("checking if you have already minted 2 nfts,\nIt may take up to 20 seconds.\nBe patient..")
@@ -102,8 +92,8 @@ export default function Home() {
       return
     }
 
-    if ((nfts as any).length >= 2) {
-      alert('you have already minted ' + (nfts as any).length + " nfts.")
+    if (nftCount >= 2) {
+      alert('you have already minted ' + nftCount + " nfts.")
       return
     }
 
@@ -114,6 +104,8 @@ export default function Home() {
       startMintMultiple(2)
     } else if (publicStarted) {
       startMintMultiple(2)
+    } else {
+      console.log('......')
     }
   }
 
@@ -131,21 +123,34 @@ export default function Home() {
                 <img src="https://f002.backblazeb2.com/file/pixelknights/mint_knights.png" className="rounded-lg shadow-lg" />
               </figure>
               <div className="max-w-md card-body">
-                <h2 className="card-title">Status: <p className='inline-block text-red-600'>{status}</p></h2>
+                {!isMintLive && (
+                  <>
+                    <div className="inline-block">mint date:</div>
+                    <Countdown
+                      date={mintStartDate}
+                      onMount={({ completed }) => completed && setIsMintLive(true)}
+                      onComplete={() => setIsMintLive(true)}
+                      className="inline-block"
+                    />
+                  </>
+                )}
                 <p className="mr-auto text-sm">
                   <span className="font-medium">Available/Total:</span>{" "}
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
                 <p className="font-medium mt-4">One solana wallet can only hold 2 nft.</p>
-                <p className="font-medium">You have ??? </p>
+                <p className="font-medium">You have <span className="text-red-700">{nftCount}</span> nfts </p>
+                {isLoading && isMintLive && (
+                  <>
+                    <ReactLoading type="bars" color="#fff" className="inline-block" />
+                    <p> Checking your holdings. </p>
+                  </>
+                )}
                 <div className="card-actions">
-                  {/* <select className="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
-                    <option disabled="disabled" selected="selected" >mint count: </option>
-                    <option>1</option>
-                    <option>2</option>
-                  </select> */}
-                  <button className="btn rounded-full btn-info" onClick={mint}>Mint 2</button>
+                  {isMintLive && (
+                    <button className="btn rounded-full btn-info" onClick={mint}>Mint 2</button>
+                  )}
                 </div>
               </div>
             </div>
@@ -225,14 +230,14 @@ export default function Home() {
             <p>connect wallet to mint</p>
           )}
         </div>
-        <div className="flex flex-col w-full">
+        {/* <div className="flex flex-col w-full">
           <h2 className="text-2xl font-bold">My NFTs</h2>
           <div className="flex mt-3 gap-x-2">
             {(nfts as any).map((nft: any, i: number) => {
               return <AnNFT key={i} nft={nft} />;
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );

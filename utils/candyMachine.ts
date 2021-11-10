@@ -293,6 +293,43 @@ export async function getNFTsForOwner(
     return allTokens;
 }
 
+
+export async function getNFTCountForOwner(
+    connection: anchor.web3.Connection,
+    ownerAddress: anchor.web3.PublicKey
+) {
+    const allMintsCandyMachine = await fetchHashTable(
+        process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
+    );
+    // const allTokens = [];
+    var count = 0;
+    const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
+        ownerAddress,
+        {
+            programId: TOKEN_PROGRAM_ID,
+        }
+    );
+
+
+    for (let index = 0; index < tokenAccounts.value.length; index++) {
+        const tokenAccount = tokenAccounts.value[index];
+        const tokenAmount = tokenAccount.account.data.parsed.info.tokenAmount;
+
+        if (
+            tokenAmount.amount == "1" &&
+            tokenAmount.decimals == "0" &&
+            allMintsCandyMachine.includes(
+                tokenAccount.account.data.parsed.info.mint
+            )
+        ) {
+            count += 1
+        }
+    }
+
+    return count;
+}
+
+
 export const mintOneToken = async (
     candyMachine: CandyMachine,
     config: anchor.web3.PublicKey, // feels like this should be part of candyMachine?
