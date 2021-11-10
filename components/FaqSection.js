@@ -17,7 +17,7 @@ export default function FaqSection() {
                         What are the Pixel Knights?
                     </div>
                     <div className="collapse-content">
-                        <p>Pixel Knights are a collection of 10,000 randomly generated Pixel Knight NFTs on the Ethereum blockchain.</p>
+                        <p>Pixel Knights are a collection of 10,000 randomly generated Pixel Knight NFTs on the Solana blockchain.</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ export default function FaqSection() {
                         How much does each Pixel Knight cost?
                     </div>
                     <div className="collapse-content">
-                        <p>Each Pixel Knight will cost 0.05 ETH</p>
+                        <p>Each Pixel Knight is totally free to mint.</p>
                     </div>
                 </div>
             </div>

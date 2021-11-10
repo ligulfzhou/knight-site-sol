@@ -28,7 +28,7 @@ import {
   getCandyMachineState,
   mintOneToken,
   shortenAddress,
-} from "../utils/candyMachine";
+} from "../utils/candy-machine";
 
 // interface AlertState {
 //   open: boolean;

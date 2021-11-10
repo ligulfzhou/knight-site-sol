@@ -8,7 +8,7 @@ export default function HeroSection() {
                         <br className="hidden lg:inline-block" />Pixel Knights
                     </h1>
                     <p className="mb-8 leading-relaxed">
-                        Pixel Knights is a collection of 10,000 randomly generated Pixel Knight NFTs on the Ethereum blockchain.
+                        Pixel Knights is a collection of 10,000 randomly generated Pixel Knight NFTs on the Solana blockchain.
                         {/* A collection of unique, cool and diverse knights, ready to leave a mark in the NFT space! */}
                         There are 8,000 human, 1,000 elf and 1,000 orc.
                         They are brave, ambitious and strong, and ready to fight for their territory.

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: knight-site
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: knight-site
   ports:

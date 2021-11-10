@@ -1,41 +1,72 @@
 import 'tailwindcss/tailwind.css'
-import {Web3ReactProvider} from '@web3-react/core'
-import {Web3Provider} from '@ethersproject/providers'
+import { useMemo } from "react";
+import * as anchor from "@project-serum/anchor";
+import { clusterApiUrl } from "@solana/web3.js";
+import {
+  getPhantomWallet,
+  getSlopeWallet,
+  getSolflareWallet,
+  getSolletWallet,
+  getSolletExtensionWallet,
+} from "@solana/wallet-adapter-wallets";
 
-function getLibrary(provider) {
-  const library = new Web3Provider(provider)
-  library.pollingInterval = 12000
-  return library
-}
+import {
+  ConnectionProvider,
+  WalletProvider,
+} from "@solana/wallet-adapter-react";
+
+import { WalletDialogProvider } from "@solana/wallet-adapter-react-ui";
+// import { createTheme, ThemeProvider } from "@material-ui/core";
+
+
+const treasury = new anchor.web3.PublicKey(
+  process.env.REACT_APP_TREASURY_ADDRESS
+);
+
+const config = new anchor.web3.PublicKey(
+  process.env.REACT_APP_CANDY_MACHINE_CONFIG
+);
+
+const candyMachineId = new anchor.web3.PublicKey(
+  process.env.REACT_APP_CANDY_MACHINE_ID
+);
+
+const network = process.env.REACT_APP_SOLANA_NETWORK // as WalletAdapterNetwork;
+const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST;
+const connection = new anchor.web3.Connection(rpcHost);
+const startDateSeed = parseInt(process.env.REACT_APP_CANDY_START_DATE, 10);
+
+const txTimeout = 30000; // milliseconds (confirm this works for your project)
 
 function MyApp({ Component, pageProps }) {
+  const endpoint = useMemo(() => clusterApiUrl(network), []);
+  const wallets = useMemo(
+    () => [
+      getPhantomWallet(),
+      getSlopeWallet(),
+      getSolflareWallet(),
+      getSolletWallet({ network }),
+      getSolletExtensionWallet({ network })
+    ],
+    []
+  );
+
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
-      <Component {...pageProps} />
-    </Web3ReactProvider>
+    <ConnectionProvider endpoint={endpoint}>
+      <WalletProvider wallets={wallets} autoConnect={true}>
+        <WalletDialogProvider>
+          <Component
+            {...pageProps}
+            candyMachineId={candyMachineId}
+            config={config}
+            connection={connection}
+            startDate={startDateSeed}
+            treasury={treasury}
+            txTimeout={txTimeout} />
+        </WalletDialogProvider>
+      </WalletProvider>
+    </ConnectionProvider>
   )
 }
 
 export default MyApp
-
-
-// import 'tailwindcss/tailwind.css';
-// import type { AppProps } from "next/app";
-
-// import { Web3ReactProvider } from '@web3-react/core'
-// import { Web3Provider } from '@ethersproject/providers'
-
-// function getLibrary(provider: any): Web3Provider {
-//   const library = new Web3Provider(provider)
-//   library.pollingInterval = 12000
-//   return library
-// }
-
-// // Export application
-// export default function LootRNG({ Component, pageProps }: AppProps) {
-//   return (
-//     <Web3ReactProvider getLibrary={getLibrary}>
-//       <Component {...pageProps} />
-//     </Web3ReactProvider>
-//   )
-// }

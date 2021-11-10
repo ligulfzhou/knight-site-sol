@@ -8,9 +8,9 @@ import FaqSection from '../components/FaqSection'
 import ABI from "../abi/abi.json";
 import { ethers } from "ethers";
 import { useWeb3React } from "@web3-react/core"
-import ConnectButton from '../components/ConnectButton'
+// import ConnectButton from '../components/ConnectButton'
 import { useEffect, useState, Fragment } from 'react'
-import useAddress from '../hooks/useAddress'
+// import useAddress from '../hooks/useAddress'
 import { Contract } from "@ethersproject/contracts";
 import { parseEther } from "@ethersproject/units";
 import { Dialog, Transition } from '@headlessui/react'
@@ -19,7 +19,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import * as anchor from "@project-serum/anchor";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import { WalletDialogButton } from "@solana/wallet-adapter-react-ui";
+import { WalletModalButton } from "@solana/wallet-adapter-react-ui";
 
 
 import {
@@ -36,24 +36,17 @@ import {
 //   severity: "success" | "info" | "warning" | "error" | undefined;
 // }
 
+export interface HomeProps {
+  candyMachineId: anchor.web3.PublicKey;
+  config: anchor.web3.PublicKey;
+  connection: anchor.web3.Connection;
+  startDate: number;
+  treasury: anchor.web3.PublicKey;
+  txTimeout: number;
+}
 
 
-export default function Home() {
-  const { active, account, activate, chainId, library } = useWeb3React()
-  const [status, setStatus] = useState("")
-  const [address, network] = useAddress()
-  const [mintStarted, setMintStarted] = useState(false)
-  const [totalSupply, setTotalSupply] = useState(0)
-
-  const [isErrorOpen, setIsErrorOpen] = useState(false)
-  const [isTransactionOpen, setIsTransactionOpen] = useState(false)
-  const [errorMsg, setErrorMsg] = useState("")
-  const [transactionId, setTransactionId] = useState("")
-
-  const [count, setCount] = useState()
-
-
-
+export default function Home(props: HomeProps) {
   const [balance, setBalance] = useState(0);
   const [isActive, setIsActive] = useState(false); // true when countdown completes
   const [isSoldOut, setIsSoldOut] = useState(false); // true when items remaining is zero
@@ -71,8 +64,7 @@ export default function Home() {
 
   const [startDate, setStartDate] = useState(new Date(props.startDate));
   const wallet = useAnchorWallet();
-  const [candyMachine, setCandyMachine] = useState(null);
-  // const [candyMachine, setCandyMachine] = useState<CandyMachine>();
+  const [candyMachine, setCandyMachine] = useState<CandyMachine>();
 
 
   const refreshCandyMachineState = () => {
@@ -87,7 +79,7 @@ export default function Home() {
         itemsRedeemed,
       } = await getCandyMachineState(
         // wallet as anchor.Wallet,
-        wallet,
+        wallet as anchor.Wallet,
         props.candyMachineId,
         props.connection
       );
@@ -184,96 +176,96 @@ export default function Home() {
     props.connection,
   ]);
 
-  useEffect(() => {
-    console.log(address)
-    console.log(network)
-  }, [])
+  // useEffect(() => {
+  //   console.log(address)
+  //   console.log(network)
+  // }, [])
 
 
-  useEffect(() => {
-    const provider = ethers.getDefaultProvider(network, { 'infura': '786649a580e3441f996da22488a8742a' });
-    const contract = new ethers.Contract(address, ABI, provider);
+  // useEffect(() => {
+  //   const provider = ethers.getDefaultProvider(network, { 'infura': '786649a580e3441f996da22488a8742a' });
+  //   const contract = new ethers.Contract(address, ABI, provider);
 
-    console.log(contract)
+  //   console.log(contract)
 
-    contract.getSaleStarted().then((started) => {
-      console.log(started)
-      setMintStarted(started)
-      console.log(mintStarted)
+  //   contract.getSaleStarted().then((started) => {
+  //     console.log(started)
+  //     setMintStarted(started)
+  //     console.log(mintStarted)
 
-      if (!started) {
-        setStatus("Not Started")
-      } else {
-        // todo: ""
-        setStatus("Started")
-      }
+  //     if (!started) {
+  //       setStatus("Not Started")
+  //     } else {
+  //       // todo: ""
+  //       setStatus("Started")
+  //     }
 
-    }).catch((error) => {
-      console.log(error)
-    })
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   })
 
-    contract.totalSupply().then((count) => {
-      console.log('count: ' + count)
-      console.log(count)
-      setTotalSupply(count)
-    }).catch((error) => {
-      console.log(error)
-    })
-  }, [active, chainId])
+  //   contract.totalSupply().then((count) => {
+  //     console.log('count: ' + count)
+  //     console.log(count)
+  //     setTotalSupply(count)
+  //   }).catch((error) => {
+  //     console.log(error)
+  //   })
+  // }, [active, chainId])
 
-  const mint = () => {
-    alert('mint will start about on Nov 14th, stay tuned...')
-    return
-    if (active) {
-      const contract = new Contract(address, ABI, library.getSigner())
-      if (!mintStarted) {
-        // alert("mint not started...")
-        setErrorMsg("Mint Not Started...")
-        openErrorModal()
-        return
-      }
-      console.log(count)
-      contract.mint(count, { 'value': parseEther((0.0333 * count).toString()) }).then((res) => {
-        console.log(res)
-        // @ts-ignore
-        setTransactionId(res["hash"])
-        openTransactionModal()
-      }).catch((error) => {
-        // @ts-ignore
-        console.log(error['data'])
-        //alert(error['message'])
-        if (error['data'] != null && error['data'] != undefined) {
-          setErrorMsg(error['data']['message'])
-        } else {
-          setErrorMsg(error['message'])
-        }
-        openErrorModal()
-      })
-    } else {
-      // alert("please connect to mainnet")
-      setErrorMsg("Please Connect Metamask to Mainnet...")
-      openErrorModal()
-    }
-  }
+  // const mint = () => {
+  //   alert('mint will start about on Nov 14th, stay tuned...')
+  //   return
+  //   if (active) {
+  //     const contract = new Contract(address, ABI, library.getSigner())
+  //     if (!mintStarted) {
+  //       // alert("mint not started...")
+  //       setErrorMsg("Mint Not Started...")
+  //       openErrorModal()
+  //       return
+  //     }
+  //     console.log(count)
+  //     contract.mint(count, { 'value': parseEther((0.0333 * count).toString()) }).then((res) => {
+  //       console.log(res)
+  //       // @ts-ignore
+  //       setTransactionId(res["hash"])
+  //       openTransactionModal()
+  //     }).catch((error) => {
+  //       // @ts-ignore
+  //       console.log(error['data'])
+  //       //alert(error['message'])
+  //       if (error['data'] != null && error['data'] != undefined) {
+  //         setErrorMsg(error['data']['message'])
+  //       } else {
+  //         setErrorMsg(error['message'])
+  //       }
+  //       openErrorModal()
+  //     })
+  //   } else {
+  //     // alert("please connect to mainnet")
+  //     setErrorMsg("Please Connect Metamask to Mainnet...")
+  //     openErrorModal()
+  //   }
+  // }
 
-  const closeErrorModal = () => {
-    setIsErrorOpen(false)
-  }
-  const openErrorModal = () => {
-    setIsErrorOpen(true)
-  }
+  // const closeErrorModal = () => {
+  //   setIsErrorOpen(false)
+  // }
+  // const openErrorModal = () => {
+  //   setIsErrorOpen(true)
+  // }
 
-  const closeTransactionModal = () => {
-    setIsTransactionOpen(false)
-  }
-  const openTransactionModal = () => {
-    setIsTransactionOpen(true)
-  }
+  // const closeTransactionModal = () => {
+  //   setIsTransactionOpen(false)
+  // }
+  // const openTransactionModal = () => {
+  //   setIsTransactionOpen(true)
+  // }
 
-  const onCountChange = (event) => {
-    console.log(event.target.value)
-    setCount(event.target.value)
-  }
+  // const onCountChange = (event) => {
+  //   console.log(event.target.value)
+  //   setCount(event.target.value)
+  // }
 
 
   return (

@@ -21,7 +21,7 @@ function Head() {
             <meta name="title" content="Pixel Knights" />
             <meta
                 name="description"
-                content="Pixel Knights are 10000 randomly generated knights and living on Ethereum mainnet."
+                content="Pixel Knights are 10000 randomly generated knights and living on Solana mainnet."
             />
 
             {/* OG + Faceook */}
@@ -30,7 +30,7 @@ function Head() {
             <meta property="og:title" content="Pixel Knights" />
             <meta
                 property="og:description"
-                content="Pixel Knights are 10000 randomly generated knights and living on Ethereum mainnet."
+                content="Pixel Knights are 10000 randomly generated knights and living on Solana mainnet."
             />
             <meta property="og:image" content="https://f002.backblazeb2.com/file/pixelknights/knights.jpeg" />
 
@@ -40,7 +40,7 @@ function Head() {
             <meta property="twitter:title" content="Pixel Knights" />
             <meta
                 property="twitter:description"
-                content="Pixel Knights are 10000 randomly generated knights and living on Ethereum mainnet."
+                content="Pixel Knights are 10000 randomly generated knights and living on Solana mainnet."
             />
             <meta property="twitter:image" content="https://f002.backblazeb2.com/file/pixelknights/knights.jpeg" />
         </HTMLHead>
@@ -68,12 +68,12 @@ function Header() {
                     <span className="ml-3 text-xl">Pixel{" "}Knights</span>
                 </a>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <a className="mr-5 hover:text-blue-600" href="#collection">Collection</a>
                     <a className="mr-5 hover:text-blue-600" href="#mint">Mint</a>
+                    <a className="mr-5 hover:text-blue-600" href="#collection">Collection</a>
                     <a className="mr-5 hover:text-blue-600" href="#milestone">Milestone</a>
                     <a className="mr-5 hover:text-blue-600" href="#faq">FAQ</a>
                 </nav>
-                <ConnectButton />
+                {/* <ConnectButton /> */}
             </div>
         </header>
     );

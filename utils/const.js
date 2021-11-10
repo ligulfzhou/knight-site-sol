@@ -1,2 +1,0 @@
-export const rinkeby_contract_address = process.env.RinkebyContractAddress || "0x46051a1E52577E54D275c464b59cDfddcF11Fbe8";
-export const mainnet_contract_address = process.env.MainnetContractAddress || "0x46051a1E52577E54D275c464b59cDfddcF11Fbe8";
