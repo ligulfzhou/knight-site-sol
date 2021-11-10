@@ -147,15 +147,20 @@ export default function Home() {
                 <img src="https://f002.backblazeb2.com/file/pixelknights/mint_knights.png" className="rounded-lg shadow-lg" />
               </figure>
               <div className="max-w-md card-body">
-                {!isMintLive && (
+                {!isMintLive ? (
                   <>
-                    <div className="inline-block">mint date:</div>
+                    <div className="inline-block text-xl">mint date: {" "}
                     <Countdown
                       date={mintStartDate}
                       onMount={({ completed }) => completed && setIsMintLive(true)}
                       onComplete={() => setIsMintLive(true)}
                       className="inline-block"
                     />
+                    </div>
+                  </>
+                ):(
+                  <>
+                 <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Mint is Live{" "} </div>
                   </>
                 )}
                 <p className="mr-auto text-sm">
@@ -163,6 +168,8 @@ export default function Home() {
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
+                <p className="mt-4">Private mint: Nov 14th 2021, 00:00 UTC.</p>
+                <p className="font-medium">Public mint: Nov 15th 2021, 00:00 UTC</p>
                 <p className="font-medium mt-4">One solana wallet can only hold 2 nft.</p>
                 <p className="font-medium">You have <span className="text-red-700">{nftCount}</span> nfts </p>
                 {isLoading && isMintLive && (
