@@ -42,7 +42,7 @@ spec:
           - name: NEXT_PUBLIC_CANDY_MACHINE_ID
             value: "7fiGDdRCpt9PUskkANqJJdLR8VUNkkdDfonncmq7no4h"
           - name: NEXT_PUBLIC_CANDY_START_DATE
-            value: "1636934400000"
+            value: "1636848000000"
           - name: NEXT_PUBLIC_SOLANA_NETWORK
             value: "devnet"
           - name: NEXT_PUBLIC_SOLANA_RPC_HOST

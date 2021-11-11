@@ -12,22 +12,27 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import useWalletBalance from "./useWalletBalance";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { sleep } from "../utils";
+import * as consts from "../utils/const";
 
 const MINT_PRICE_SOL = 1;
 
 const treasury = new anchor.web3.PublicKey(
-    process.env.NEXT_PUBLIC_TREASURY_ADDRESS!
+    consts.NEXT_PUBLIC_TREASURY_ADDRESS! 
+    // process.env.NEXT_PUBLIC_TREASURY_ADDRESS!
 );
 
 const config = new anchor.web3.PublicKey(
-    process.env.NEXT_PUBLIC_CANDY_MACHINE_CONFIG!
+    consts.NEXT_PUBLIC_CANDY_MACHINE_CONFIG!
+    // process.env.NEXT_PUBLIC_CANDY_MACHINE_CONFIG!
 );
 
 const candyMachineId = new anchor.web3.PublicKey(
-    process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
+    consts.NEXT_PUBLIC_CANDY_MACHINE_ID!
+    // process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
 );
 
-const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!;
+const rpcHost = consts.NEXT_PUBLIC_SOLANA_RPC_HOST!;
+// const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!;
 const connection = new anchor.web3.Connection(rpcHost);
 
 const txTimeout = 30000;
@@ -46,7 +51,8 @@ export default function useCandyMachine() {
     const [isMinting, setIsMinting] = useState(false);
     const [isSoldOut, setIsSoldOut] = useState(false);
     const [mintStartDate, setMintStartDate] = useState(
-        new Date(parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10))
+        new Date(parseInt(consts.NEXT_PUBLIC_CANDY_START_DATE!, 10))
+        // new Date(parseInt(process.env.NEXT_PUBLIC_CANDY_START_DATE!, 10))
     );
 
     useEffect(() => {

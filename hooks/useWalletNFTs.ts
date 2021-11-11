@@ -2,8 +2,10 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useEffect, useState } from "react";
 import * as anchor from "@project-serum/anchor";
 import { getNFTsForOwner } from "../utils/candyMachine";
+import * as consts from "../utils/const";
 
-const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!;
+// const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!;
+const rpcHost = consts.NEXT_PUBLIC_SOLANA_RPC_HOST!;
 const connection = new anchor.web3.Connection(rpcHost);
 
 const useWalletNfts = () => {

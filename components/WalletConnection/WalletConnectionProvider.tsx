@@ -15,11 +15,12 @@ import {
 } from "@solana/wallet-adapter-wallets";
 import { clusterApiUrl } from "@solana/web3.js";
 import { FC, useMemo } from "react";
+import * as consts from "../../utils/const";
 
 const WalletConnectionProvider: FC = ({ children }) => {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
-  const network = process.env
-    .NEXT_PUBLIC_SOLANA_NETWORK as WalletAdapterNetwork;
+  const network = consts.NEXT_PUBLIC_SOLANA_NETWORK as WalletAdapterNetwork;
+  // const network = process.env.NEXT_PUBLIC_SOLANA_NETWORK as WalletAdapterNetwork;
 
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 

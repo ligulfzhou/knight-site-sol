@@ -2,8 +2,10 @@ import * as anchor from "@project-serum/anchor";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { MetadataProgram, Metadata } from "@metaplex/js";
+import * as consts from '../utils/const';
 
-const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!;
+// const rpcHost = process.env.NEXT_PUBLIC_SOLANA_RPC_HOST!;
+const rpcHost = consts.NEXT_PUBLIC_SOLANA_RPC_HOST!;
 const connection = new anchor.web3.Connection(rpcHost);
 export const MAX_NAME_LENGTH = 32;
 export const MAX_URI_LENGTH = 200;

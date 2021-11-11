@@ -4,6 +4,7 @@ import { Metadata } from "@metaplex/js";
 import { MintLayout, TOKEN_PROGRAM_ID, Token } from "@solana/spl-token";
 import { sendTransactions, sleep } from ".";
 import { fetchHashTable } from "../hooks/useHashTable";
+import * as consts from "../utils/const";
 
 export const CANDY_MACHINE_PROGRAM = new anchor.web3.PublicKey(
     "cndyAnrLdpjq1Ssp1z8xxDsB8dxe7u4HL5Nxi2K5WXZ"
@@ -246,7 +247,8 @@ export async function getNFTsForOwner(
     ownerAddress: anchor.web3.PublicKey
 ) {
     const allMintsCandyMachine = await fetchHashTable(
-        process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
+        consts.NEXT_PUBLIC_CANDY_MACHINE_ID!
+        // process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
     );
     const allTokens = [];
     const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
@@ -299,7 +301,8 @@ export async function getNFTCountForOwner(
     ownerAddress: anchor.web3.PublicKey
 ) {
     const allMintsCandyMachine = await fetchHashTable(
-        process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
+        consts.NEXT_PUBLIC_CANDY_MACHINE_ID!
+        // process.env.NEXT_PUBLIC_CANDY_MACHINE_ID!
     );
     // const allTokens = [];
     var count = 0;
