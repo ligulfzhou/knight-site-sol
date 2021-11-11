@@ -74,7 +74,7 @@ function Header() {
         <header className="text-white body-font" id="home">
             <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <a className="flex title-font font-medium items-center text-white mb-4 md:mb-0">
-                    <img src="https://f002.backblazeb2.com/file/pixelknights/logo.png" viewBox="0 0 24 24" className="w-10 h-10 text-white p-1 rounded-full" />
+                    <img src="https://f002.backblazeb2.com/file/pixelknights/logo.png" className="w-10 h-10 text-white p-1 rounded-full" />
                     <span className="ml-3 text-xl">Pixel{" "}Knights</span>
                 </a>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
@@ -120,10 +120,10 @@ function Footer() {
                     <span className="ml-3 text-xl text-white">Pixel Knights</span>
                 </a>
                 <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
-                    <a href="https://twitter.com/Pixel__Knights" target="_blank" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
+                    <a href="https://twitter.com/Pixel__Knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
                         <img src="/twitter.svg" className="w-5 h-5" />
                     </a>
-                    <a href="https://discord.gg/kvyMYEWXes" target="_blank" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                    <a href="https://discord.gg/kvyMYEWXes" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
                         <img src="/discord.svg" className="w-5 h-5" />
                     </a>
                     {/* <a className="ml-3 ">

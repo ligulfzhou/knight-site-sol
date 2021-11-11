@@ -150,17 +150,17 @@ export default function Home() {
                 {!isMintLive ? (
                   <>
                     <div className="inline-block text-xl">mint date: {" "}
-                    <Countdown
-                      date={mintStartDate}
-                      onMount={({ completed }) => completed && setIsMintLive(true)}
-                      onComplete={() => setIsMintLive(true)}
-                      className="inline-block"
-                    />
+                      <Countdown
+                        date={mintStartDate}
+                        onMount={({ completed }) => completed && setIsMintLive(true)}
+                        onComplete={() => setIsMintLive(true)}
+                        className="inline-block text-red-400"
+                      />
                     </div>
                   </>
-                ):(
+                ) : (
                   <>
-                 <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Mint is Live{" "} </div>
+                    <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Mint is Live{" "} </div>
                   </>
                 )}
                 <p className="mr-auto text-sm">
@@ -168,10 +168,10 @@ export default function Home() {
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
-                <p className="mt-4">Private mint: Nov 14th 2021, 00:00 UTC.</p>
-                <p className="font-medium">Public mint: Nov 15th 2021, 00:00 UTC</p>
+                <p className="mt-4">Private mint: <span className="text-red-400">Nov 14th 2021, 00:00 UTC</span>.</p>
+                <p className="font-medium">Public mint: <span className="text-red-400"> Nov 15th 2021, 00:00 UTC</span>.</p>
                 <p className="font-medium mt-4">One solana wallet can only hold 2 nft.</p>
-                <p className="font-medium">You have <span className="text-red-700">{nftCount}</span> nfts </p>
+                <p className="font-medium">You have <span className="text-red-400">{nftCount}</span> nfts </p>
                 {isLoading && isMintLive && (
                   <>
                     <ReactLoading type="bars" color="#fff" className="inline-block" />
@@ -179,8 +179,8 @@ export default function Home() {
                   </>
                 )}
                 <div className="card-actions">
-                  {/* {isMintLive && ( TODO  */} 
-                    <button className="btn rounded-full btn-info" onClick={mint}>Mint 2</button>
+                  {/* {isMintLive && ( TODO  */}
+                  <button className="btn rounded-full btn-info" onClick={mint}>Mint 2</button>
                   {/* )} */}
                 </div>
               </div>
@@ -192,84 +192,6 @@ export default function Home() {
       {/* <MilestoneSection /> */}
       <FaqSection />
 
-      {/* <div className="flex flex-col items-center min-h-screen mx-6">
-        <Toaster />
-        <div className="flex items-center justify-between w-full mt-3">
-          <h1 className="text-2xl font-bold">next-candy-machine</h1>
-          <div className="flex items-center">
-            {connected && (
-              <div className="flex items-end mr-2">
-                <p className="text-xs text-gray-400">balance</p>
-                <p className="mx-1 font-bold leading-none">
-                  {balance.toFixed(2)}
-                </p>
-                <p
-                  className="font-bold leading-none text-transparent bg-clip-text"
-                  style={{
-                    backgroundImage: `linear-gradient(to bottom right, #00FFA3, #03E1FF, #DC1FFF)`,
-                  }}
-                >
-                  SOL
-                </p>
-              </div>
-            )}
-            <WalletMultiButton />
-          </div>
-        </div>
-        {connected && (
-          <p className="mr-auto text-sm">
-            <span className="font-bold">Available/Minted/Total:</span>{" "}
-            {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/
-            {nftsData.itemsAvailable}
-          </p>
-        )}
-        <div className="flex items-start justify-center w-11/12 my-10">
-          {connected ? (
-            <>
-              {new Date(mintStartDate).getTime() < Date.now() ? (
-                <>
-                  {isSoldOut ? (
-                    <p>SOLD OUT</p>
-                  ) : (
-                    <>
-                      <div className="flex flex-col w-1/2">
-                        <h1 className="mb-10 text-3xl font-bold">Mint One</h1>
-                        <button
-                          onClick={startMint}
-                          disabled={isMinting}
-                          className="px-4 py-2 mx-auto font-bold text-white transition-opacity rounded-lg hover:opacity-70 bg-gradient-to-br from-green-300 via-blue-500 to-purple-600"
-                        >
-                          {isMinting ? "loading" : "mint 1"}
-                        </button>
-                      </div>
-                      <div className="flex flex-col w-1/2">
-                        <h1 className="mb-10 text-3xl font-bold">Mint Many</h1>
-                        <MintMany /> 
-                      </div>
-                    </>
-                  )}
-                </>
-              ) : (
-                <Countdown
-                  date={mintStartDate}
-                  onMount={({ completed }) => completed && setIsMintLive(true)}
-                  onComplete={() => setIsMintLive(true)}
-                />
-              )}
-            </>
-          ) : (
-            <p>connect wallet to mint</p>
-          )}
-        </div>
-        <div className="flex flex-col w-full">
-          <h2 className="text-2xl font-bold">My NFTs</h2>
-          <div className="flex mt-3 gap-x-2">
-            {(nfts as any).map((nft: any, i: number) => {
-              return <AnNFT key={i} nft={nft} />;
-            })}
-          </div>
-        </div>
-      </div> */}
     </Layout>
   );
 }

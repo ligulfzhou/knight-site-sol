@@ -21,10 +21,10 @@ export default function HeroSection() {
                         {/* <br className="hidden lg:inline-block" />Join our discord and follow our twitter to get latest announcements. And Stay Tuned. */}
                     </p>
                     <div className="flex justify-center">
-                        <a href="https://twitter.com/Pixel__Knights" target="_blank" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
+                        <a href="https://twitter.com/Pixel__Knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
                             <img src="/twitter.svg" className=""/>
                         </a>
-                        <a href="https://discord.gg/kvyMYEWXes" target="_blank" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                        <a href="https://discord.gg/kvyMYEWXes" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
                             <img src="/discord.svg" className=""/>
                         </a>
                     </div>
