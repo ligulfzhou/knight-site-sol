@@ -72,7 +72,7 @@ export default function Home() {
       console.log('address: ' + address)
       // TODO
       // if (privateStarted && !publicStarted) {
-      const res = await fetch('knight/in/whitelist/' + address)
+      const res = await fetch('/knight/in/whitelist/' + address)
       const data = await res.json()
 
       console.log(address + " in wl: " + data['in'])
@@ -91,7 +91,7 @@ export default function Home() {
     }
 
     if (!isMintLive) {
-      addToast("both premint and public mint are not started...", {
+      addToast("both Whitelist mint and public mint are not started...", {
         appearance: 'error',
         autoDismiss: true,
       })
@@ -168,7 +168,7 @@ export default function Home() {
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
-                <p className="mt-4">Private mint: <span className="text-red-400">Nov 14th 2021, 00:00 UTC</span>.</p>
+                <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 14th 2021, 00:00 UTC</span>.</p>
                 <p className="font-medium">Public mint: <span className="text-red-400"> Nov 15th 2021, 00:00 UTC</span>.</p>
                 <p className="font-medium mt-4">One solana wallet can only hold 2 nft.</p>
                 <p className="font-medium">You have <span className="text-red-400">{nftCount}</span> nfts </p>
