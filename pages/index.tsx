@@ -168,8 +168,8 @@ export default function Home() {
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
-                <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 14th 2021, 00:00 UTC</span>.</p>
-                <p className="font-medium">Public mint: <span className="text-red-400"> Nov 15th 2021, 00:00 UTC</span>.</p>
+                <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p>
+                <p className="font-medium">Public mint: <span className="text-red-400"> Nov 19th 2021, 00:00 UTC</span>.</p>
                 <p className="font-medium mt-4">One solana wallet can only hold 2 nft.</p>
                 <p className="font-medium">You have <span className="text-red-400">{nftCount}</span> nfts </p>
                 {isLoading && isMintLive && (

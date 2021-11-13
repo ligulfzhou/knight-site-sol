@@ -80,7 +80,7 @@ function Header() {
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
                     <a className="mr-5 hover:text-blue-600" href="#mint">Mint</a>
                     <a className="mr-5 hover:text-blue-600" href="#collection">Collection</a>
-                    <a className="mr-5 hover:text-blue-600" href="#milestone">Milestone</a>
+                    {/* <a className="mr-5 hover:text-blue-600" href="#milestone">Milestone</a> */}
                     <a className="mr-5 hover:text-blue-600" href="#faq">FAQ</a>
                 </nav>
                 {connected && (
