@@ -34,14 +34,14 @@ spec:
           - name: NEXT_PUBLIC_TREASURY_ADDRESS
             value: "CZtcUWhhrCjG46Cb3wq7fzKKkMtRgbN9HowqSwENcfWM"
           - name: NEXT_PUBLIC_CANDY_MACHINE_CONFIG
-            value: "CXd9tRQ2dhBhnqjYqDDMa5JwaBjN7wW2RPKZwZPDwyxb"
+            value: "BJBnCSbLNuFTZaqZuozJmEBUqVrtBba7nGdAQLHrk1Cx"
           - name: NEXT_PUBLIC_CANDY_MACHINE_ID
-            value: "7fiGDdRCpt9PUskkANqJJdLR8VUNkkdDfonncmq7no4h"
+            value: "w2u3npYqjJG9N92PpdD48f4jLxv8NpbXnLT1CAZTu8i"
           - name: NEXT_PUBLIC_CANDY_START_DATE
             value: "1637193600000"
           - name: NEXT_PUBLIC_SOLANA_NETWORK
-            value: "devnet"
+            value: "mainnet-beta"
           - name: NEXT_PUBLIC_SOLANA_RPC_HOST
-            value: "https://explorer-api.devnet.solana.com"
+            value: "https://explorer-api.mainnet-beta.solana.com"
         ports:
         - containerPort: 3000
