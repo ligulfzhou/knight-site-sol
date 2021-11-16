@@ -31,10 +31,6 @@ spec:
         image: docker.io/ligulfzhou53/knight-site
         imagePullPolicy: Always
         env:
-          - name: MainnetContractAddress
-            value: "0x398d6b3F278247B5CE1f2b38a16Cc1302546DFb8"
-          - name: RinkebyContractAddress
-            value: "0x9c886f1e9c25b35573f31129182fcff92198cd9a" 
           - name: NEXT_PUBLIC_TREASURY_ADDRESS
             value: "CZtcUWhhrCjG46Cb3wq7fzKKkMtRgbN9HowqSwENcfWM"
           - name: NEXT_PUBLIC_CANDY_MACHINE_CONFIG
