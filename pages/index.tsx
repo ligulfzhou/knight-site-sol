@@ -234,7 +234,7 @@ export default function Home() {
                 )}
                 <div className="card-actions">
                   <select className="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
-                    <option disabled="disabled" selected="selected" >mint count: </option>
+                    <option disabled selected>mint count: </option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
