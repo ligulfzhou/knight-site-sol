@@ -214,21 +214,28 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    {privateStarted && !publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>}
-                    {publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>}
+                    {/* {privateStarted && !publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>} */}
+                    {/* {publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>} */}
+                    {isMintLive && (
+                      <>
+                      <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Mint is Live{" "} </div>
+                      <p className="mx-auto"><span className="text-red-400">Claim Your PixelKnights ASAP.</span></p>
+                      </>
+                    )}
                   </>
                 )}
-                <p className="mr-auto text-sm">
+                <p className="mr-auto text-sm mt-4">
                   <span className="font-medium">Available/Total:</span>{" "}
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
                 {/* <p className="font-medium">Public mint: <span className="text-red-400"> Nov 18th 2021, 00:00 UTC</span>.</p> */}
-                <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p>
-                <p className="font-medium">Public mint: <span className="text-red-400"> Nov 19th 2021, 00:00 UTC</span>.</p>
-                <p className="font-medium mt-4">One solana wallet can hold 2 nft.</p>
+                <p className="mt-4">Mint Date: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p>
+                {/* <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p> */}
+                {/* <p className="font-medium">Public mint: <span className="text-red-400"> Nov 19th 2021, 00:00 UTC</span>.</p> */}
+                {/* <p className="font-medium mt-4">One solana wallet can hold 2 nft.</p> */}
                 {/* <p className="font-medium">Only 3 nfts can be minted at once.</p> */}
-                <p className="font-medium">Wallet on whitelist can hold 3 nft.</p>
+                {/* <p className="font-medium">Wallet on whitelist can hold 3 nft.</p> */}
                 {/* <p className="font-medium"> can hold 3 nft.</p> */}
                 {/* <p className="font-medium mt-2">You have <span className="text-red-400">{nftCount}</span> nfts </p> */}
                 {/* {isLoading && isMintLive && (
@@ -243,6 +250,8 @@ export default function Home() {
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
                  </select>
                   {/* {isMintLive && ( TODO  */}
                   <button className="btn rounded-full btn-info" onClick={mint}>Mint</button>
