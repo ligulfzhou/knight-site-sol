@@ -42,6 +42,6 @@ spec:
           - name: NEXT_PUBLIC_SOLANA_NETWORK
             value: "mainnet-beta"
           - name: NEXT_PUBLIC_SOLANA_RPC_HOST
-            value: "https://explorer-api.mainnet-beta.solana.com"
+            value: "https://solana-api.projectserum.com/"
         ports:
         - containerPort: 3000

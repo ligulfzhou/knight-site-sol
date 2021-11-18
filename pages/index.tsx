@@ -115,14 +115,14 @@ export default function Home() {
       return
     }
 
-    if (isLoading as boolean) {
-      addToast("checking if you have already minted 2 nfts,\nIt may take up to 20 seconds.\nBe patient...", {
-        appearance: 'error',
-        autoDismiss: true,
-      })
-      console.log(isLoading)
-      return
-    }
+    // if (isLoading as boolean) {
+    //   addToast("checking if you have already minted 2 nfts,\nIt may take up to 20 seconds.\nBe patient...", {
+    //     appearance: 'error',
+    //     autoDismiss: true,
+    //   })
+    //   console.log(isLoading)
+    //   return
+    // }
 
     const address = publicKey?.toString()
     console.log('address: ' + address)
@@ -137,50 +137,53 @@ export default function Home() {
       return
     }
 
-    if (nftCount > 2 - mintCnt && !inWL) {
-      addToast('you have already minted ' + nftCount + " nfts...\nyou are not able to mint > 2 nfts...", {
-        appearance: 'error',
-        autoDismiss: true,
-      })
-      return
-    }
+    startMintMultiple(mintCnt)
 
-    if (nftCount > 3 - mintCnt && inWL) {
-      addToast('you have already minted ' + nftCount + " nfts...\nyou are not able to mint > 3 nfts...", {
-        appearance: 'error',
-        autoDismiss: true,
-      })
-      return
-    }
 
-    if (privateStarted && !publicStarted && !inWL) {
-      addToast('you are not in whitelist, can not mint in whitelist mint...', {
-        appearance: 'error',
-        autoDismiss: true,
-      })
-      return
-    } else if (privateStarted && !publicStarted && inWL) {
-      startMintMultiple(mintCnt)
-    } else if (publicStarted) {
-      startMintMultiple(mintCnt)
-    } else {
-      addToast("contact project master...but you will never see this...", {
-        appearance: 'error',
-        autoDismiss: true,
-      })
-    }
+    // if (nftCount > 2 - mintCnt && !inWL) {
+    //   addToast('you have already minted ' + nftCount + " nfts...\nyou are not able to mint > 2 nfts...", {
+    //     appearance: 'error',
+    //     autoDismiss: true,
+    //   })
+    //   return
+    // }
 
-    console.log('address: ' + address)
-    const mint_data = {
-      address: address,
-      count: mintCnt
-    }
-    const mint_res = await fetch('/knight/mint', {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
-    const resData = await mint_res.json();
-    console.log(resData)
+    // if (nftCount > 3 - mintCnt && inWL) {
+    //   addToast('you have already minted ' + nftCount + " nfts...\nyou are not able to mint > 3 nfts...", {
+    //     appearance: 'error',
+    //     autoDismiss: true,
+    //   })
+    //   return
+    // }
+
+    // if (privateStarted && !publicStarted && !inWL) {
+    //   addToast('you are not in whitelist, can not mint in whitelist mint...', {
+    //     appearance: 'error',
+    //     autoDismiss: true,
+    //   })
+    //   return
+    // } else if (privateStarted && !publicStarted && inWL) {
+    //   startMintMultiple(mintCnt)
+    // } else if (publicStarted) {
+    //   startMintMultiple(mintCnt)
+    // } else {
+    //   addToast("contact project master...but you will never see this...", {
+    //     appearance: 'error',
+    //     autoDismiss: true,
+    //   })
+    // }
+
+    // console.log('address: ' + address)
+    // const mint_data = {
+    //   address: address,
+    //   count: mintCnt
+    // }
+    // const mint_res = await fetch('/knight/mint', {
+    //   method: "POST",
+    //   body: JSON.stringify(data)
+    // })
+    // const resData = await mint_res.json();
+    // console.log(resData)
 
   }
 
@@ -213,7 +216,6 @@ export default function Home() {
                   <>
                     {privateStarted && !publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>}
                     {publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>}
-
                   </>
                 )}
                 <p className="mr-auto text-sm">
@@ -221,24 +223,26 @@ export default function Home() {
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
                 </p>
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
-                <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p>
-                <p className="font-medium">Public mint: <span className="text-red-400"> Nov 19th 2021, 00:00 UTC</span>.</p>
-                <p className="font-medium mt-4">One solana wallet can only hold 2 nft.</p>
-                <p className="font-medium">Wallet on whitelist can hold 3 nft.</p>
-                <p className="font-medium mt-2">You have <span className="text-red-400">{nftCount}</span> nfts </p>
-                {isLoading && isMintLive && (
+                {/* <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p> */}
+                <p className="font-medium">Public mint: <span className="text-red-400"> Nov 18th 2021, 00:00 UTC</span>.</p>
+                {/* <p className="font-medium">Public mint: <span className="text-red-400"> Nov 19th 2021, 00:00 UTC</span>.</p> */}
+                <p className="font-medium mt-4">One solana wallet can hold unlimited nft.</p>
+                <p className="font-medium">Only 3 nfts can be minted at once.</p>
+                {/* <p className="font-medium">Wallet on whitelist can hold 3 nft.</p> */}
+                {/* <p className="font-medium mt-2">You have <span className="text-red-400">{nftCount}</span> nfts </p> */}
+                {/* {isLoading && isMintLive && (
                   <>
                     <ReactLoading type="bars" color="#fff" className="inline-block" />
                     <p> Checking your holdings. </p>
                   </>
-                )}
+                )} */}
                 <div className="card-actions">
                   <select className="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
                     <option disabled selected>mint count: </option>
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
-                  </select>
+                 </select>
                   {/* {isMintLive && ( TODO  */}
                   <button className="btn rounded-full btn-info" onClick={mint}>Mint</button>
                   {/* )} */}

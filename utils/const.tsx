@@ -3,7 +3,8 @@ export const NEXT_PUBLIC_CANDY_MACHINE_CONFIG=process.env.NEXT_PUBLIC_CANDY_MACH
 export const NEXT_PUBLIC_CANDY_MACHINE_ID=process.env.NEXT_PUBLIC_CANDY_MACHINE_ID || "w2u3npYqjJG9N92PpdD48f4jLxv8NpbXnLT1CAZTu8i"
 export const NEXT_PUBLIC_CANDY_START_DATE=process.env.NEXT_PUBLIC_CANDY_START_DATE || "1637193600000"
 export const NEXT_PUBLIC_SOLANA_NETWORK=process.env.NEXT_PUBLIC_SOLANA_NETWORK || "mainnet-beta"
-export const NEXT_PUBLIC_SOLANA_RPC_HOST=process.env.NEXT_PUBLIC_SOLANA_RPC_HOST || "https://explorer-api.mainnet-beta.solana.com"
+export const NEXT_PUBLIC_SOLANA_RPC_HOST=process.env.NEXT_PUBLIC_SOLANA_RPC_HOST || "https://solana-api.projectserum.com/"
+
 
 // authority = TREASURY_ADDRESS
 // candyMachineAddress = CANDY_MACHINE_ID
