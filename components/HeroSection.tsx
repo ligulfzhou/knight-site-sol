@@ -15,17 +15,25 @@ export default function HeroSection() {
 
                         {/* Stay Tuned. */}
                     </p>
-                    <p className="pb-4 text-indigo-500">Join our discord and follow our twitter to get latest announcements. And Stay Tuned.
+                    <p className="pb-4 text-indigo-500">
+                        Plz follow us on twtter or join our discrod server.<br/>
+                        Buy Pixel Knights nft from <a href="https://digitaleyes.market/collections/Pixel%20Knights" className="text-red-500" target="_blank" rel="noreferrer"> magiceden.io</a> or <a href="https://digitaleyes.market/collections/Pixel%20Knights" className="text-red-500" target="_blank" rel="noreferrer"> digitaleys.market</a>.
                         {/* Pixel Knights will drop at N/A */}
                         {/* 7th Nov, 0:00 UTC,  */}
                         {/* <br className="hidden lg:inline-block" />Join our discord and follow our twitter to get latest announcements. And Stay Tuned. */}
                     </p>
                     <div className="flex justify-center">
                         <a href="https://twitter.com/Pixel__Knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 focus:outline-none rounded text-lg">
-                            <img src="/twitter.svg" className=""/>
+                            <img src="/twitter.svg" className="" />
                         </a>
                         <a href="https://discord.gg/kvyMYEWXes" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
-                            <img src="/discord.svg" className=""/>
+                            <img src="/discord.svg" className="" />
+                        </a>
+                        <a href="https://magiceden.io/marketplace/pixel_knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                            <img src="/me.svg" className="" />
+                        </a>
+                        <a href="https://digitaleyes.market/collections/Pixel%20Knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                            <img src="/digitaleyes.svg" className="" />
                         </a>
                     </div>
                 </div>

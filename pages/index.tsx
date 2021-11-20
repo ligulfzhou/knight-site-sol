@@ -247,6 +247,14 @@ export default function Home() {
                   </>
                 )} */}
                 <p className="font-medium mt-4">Thanks for your participation!</p>
+                <div className="flex justify-center mt-3">
+                  <a href="https://magiceden.io/marketplace/pixel_knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                    <img src="/me.svg" className="" />
+                  </a>
+                  <a href="https://digitaleyes.market/collections/Pixel%20Knights" target="_blank" rel="noreferrer" className="inline-flex border-0 py-2 px-6 text-indigo-500 focus:outline-none rounded text-lg">
+                    <img src="/digitaleyes.svg" className="" />
+                  </a>
+                </div>
                 {/* <div className="card-actions">
                   <select className="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
                     <option disabled selected>mint count: </option>
