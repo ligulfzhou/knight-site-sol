@@ -201,7 +201,7 @@ export default function Home() {
                 <img src="https://f002.backblazeb2.com/file/pixelknights/mint_knights.png" className="rounded-lg shadow-lg" />
               </figure>
               <div className="max-w-md card-body">
-                {!isMintLive ? (
+                {/* {!isMintLive ? (
                   <>
                     <div className="inline-block text-xl">mint date: {" "}
                       <Countdown
@@ -214,8 +214,8 @@ export default function Home() {
                   </>
                 ) : (
                   <>
-                    {/* {privateStarted && !publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>} */}
-                    {/* {publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>} */}
+                    {privateStarted && !publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>}
+                    {publicStarted && <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Whitelist Mint is Live{" "} </div>}
                     {isMintLive && (
                       <>
                       <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Mint is Live{" "} </div>
@@ -223,7 +223,8 @@ export default function Home() {
                       </>
                     )}
                   </>
-                )}
+                )} */}
+                <div className="inline-block text-xl mx-auto text-brown-700 font-medium">Sold Out</div>
                 <p className="mr-auto text-sm mt-4">
                   <span className="font-medium">Available/Total:</span>{" "}
                   <span className="text-red-400">{nftsData.itemsRemaining}/{nftsData.itemsAvailable} </span>
@@ -231,6 +232,7 @@ export default function Home() {
                 {/* <p>Whether you prefer human, elf or orc, but they are all unique, cool and adorable. Mint your Pixel Knights before it`s too late.</p> */}
                 {/* <p className="font-medium">Public mint: <span className="text-red-400"> Nov 18th 2021, 00:00 UTC</span>.</p> */}
                 <p className="mt-4">Mint Date: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p>
+                {/* <p className="mt-4">Mint Date: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p> */}
                 {/* <p className="mt-4">Whitelist mint: <span className="text-red-400">Nov 18th 2021, 00:00 UTC</span>.</p> */}
                 {/* <p className="font-medium">Public mint: <span className="text-red-400"> Nov 19th 2021, 00:00 UTC</span>.</p> */}
                 {/* <p className="font-medium mt-4">One solana wallet can hold 2 nft.</p> */}
@@ -244,7 +246,8 @@ export default function Home() {
                     <p> Checking your holdings. </p>
                   </>
                 )} */}
-                <div className="card-actions">
+                <p className="font-medium mt-4">Thanks for your participation!</p>
+                {/* <div className="card-actions">
                   <select className="select select-bordered select-accent max-w-xs" onChange={onCountChange}>
                     <option disabled selected>mint count: </option>
                     <option>1</option>
@@ -253,10 +256,10 @@ export default function Home() {
                     <option>4</option>
                     <option>5</option>
                  </select>
-                  {/* {isMintLive && ( TODO  */}
+                  {isMintLive && ( TODO 
                   <button className="btn rounded-full btn-info" onClick={mint}>Mint</button>
-                  {/* )} */}
-                </div>
+                  )}
+                </div> */}
               </div>
             </div>
           </div>
