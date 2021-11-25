@@ -17,7 +17,7 @@ export default function HeroSection() {
                     </p>
                     <p className="pb-4 text-indigo-500">
                         Plz follow us on twtter or join our discrod server.<br/>
-                        Buy Pixel Knights nft from <a href="https://digitaleyes.market/collections/Pixel%20Knights" className="text-red-500" target="_blank" rel="noreferrer"> magiceden.io</a> or <a href="https://digitaleyes.market/collections/Pixel%20Knights" className="text-red-500" target="_blank" rel="noreferrer"> digitaleys.market</a>.
+                        Buy Pixel Knights nft from <a href="https://magiceden.io/marketplace/pixel_knights" className="text-red-500" target="_blank" rel="noreferrer"> magiceden.io</a> or <a href="https://digitaleyes.market/collections/Pixel%20Knights" className="text-red-500" target="_blank" rel="noreferrer"> digitaleys.market</a>.
                         {/* Pixel Knights will drop at N/A */}
                         {/* 7th Nov, 0:00 UTC,  */}
                         {/* <br className="hidden lg:inline-block" />Join our discord and follow our twitter to get latest announcements. And Stay Tuned. */}
