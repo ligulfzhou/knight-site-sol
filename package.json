@@ -3,10 +3,10 @@
   "name": "next-candy-machine",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev -p 3333",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev -p 3333",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
+    "lint": "NODE_OPTIONS=--openssl-legacy-provider next lint"
   },
   "dependencies": {
     "@metaplex/js": "^2.0.1",
